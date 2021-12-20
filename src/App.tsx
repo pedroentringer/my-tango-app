@@ -1,42 +1,22 @@
+import { SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 
-import { translate } from './locales'
+import { Container } from './global/styles'
+import Dashboard from './screens/dashboard'
 
-export default function App() {
-  const [lang, setLang] = useState('en-US')
+import { ThemeProvider } from 'styled-components';
+import theme from './global/styles/theme'
+import React from 'react';
 
-  const translated = translate(lang);
-
-  return (
-    <View style={styles.container}>
-      <LinearGradient
-        colors={['#EB3349', '#F45C43']}
-        style={styles.gradient}
-      >
-        <Text style={{color: 'white'}}>{lang}</Text>
-        <Text style={{fontSize: 24, fontWeight: 'bold', color: 'white'}}>{translated.title}</Text>
-        <View>
-          <Button color='white' title='Ingles' onPress={() => setLang('en-US')} />
-          <Button color='white' title='Português' onPress={() => setLang('pt-BR')} />
-          <Button color='white' title='Francês' onPress={() => setLang('fr-FR')} />
-        </View>
-      </LinearGradient>
-      <StatusBar style="light" />
-    </View>
-  );
+export default function AppIndex() {
+    return (
+        <ThemeProvider theme={theme}>
+            <StatusBar style="auto" />
+            <Container>
+                <SafeAreaView />
+                <Dashboard />
+                <SafeAreaView />
+            </Container>
+        </ThemeProvider>
+    )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  gradient:{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-});
