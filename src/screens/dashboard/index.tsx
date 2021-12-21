@@ -69,7 +69,10 @@ export default function Dashboard() {
         </PlansInfo>
         
         <View style={{
-          flexDirection: 'row'
+          flexDirection: 'row',
+          justifyContent: 'center',
+          padding: 10,
+          marginTop: 40
         }}>
           <Button title='Ingles' onPress={() => setLang('en')} />
           <Button title='Português' onPress={() => setLang('pt')} />

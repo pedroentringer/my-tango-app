@@ -5,13 +5,15 @@ import { Container } from './global/styles'
 import Dashboard from './screens/dashboard'
 
 import { ThemeProvider } from 'styled-components';
-import theme from './global/styles/theme'
-import React from 'react';
+import { lightTheme, darkTheme } from './global/styles/theme'
+import React, { useState } from 'react';
 
 export default function AppIndex() {
+    const [isDarkTheme, setIsDarkTheme] = useState(false)
+    
     return (
-        <ThemeProvider theme={theme}>
-            <StatusBar style="auto" />
+        <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+            <StatusBar style={isDarkTheme ? 'light' : 'dark'} />
             <Container>
                 <SafeAreaView />
                 <Dashboard />

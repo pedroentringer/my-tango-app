@@ -52,7 +52,7 @@ export const Card = styled.View`
     height: 260px;
     margin-right: 20px;
     border-radius: 16px;
-    background-color: #ffffff;
+    background-color: ${(props) => props.theme.colors.secondary};
     padding: 16px;
     justify-content: space-between;
 `;
