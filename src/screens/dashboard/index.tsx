@@ -24,10 +24,8 @@ import Margin from '../../components/margin';
 import { SectionTitle, TextBold, TextRegular } from '../../components/texts'
 import { DefaultButton, PrimaryButton, IconPlusButton } from '../../components/buttons'
 
-import topUpOptions from './mocks/topUpOptions';
-
 export default function Dashboard() {
-  const [lang, setLang] = useState('fr')
+  const [lang, setLang] = useState('en')
 
   const translated = translate(lang);
 
@@ -129,8 +127,7 @@ export default function Dashboard() {
 
           <Card>
 
-            {topUpOptions.map((option, index) => {
-
+            {translated.topUpOptions.map((option, index) => {
               return (
                 <ListRow key={`topUpOptions-${index}`}>
                   <Center>

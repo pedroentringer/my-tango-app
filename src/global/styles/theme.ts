@@ -28,7 +28,7 @@ export const darkTheme = {
     },
     gray: {
       '900': '#ffffff',
-      '500': '#282936',
+      '500': '#bdbdbd',
       '200': '#111',
     }
   },

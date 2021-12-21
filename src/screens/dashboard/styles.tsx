@@ -79,7 +79,6 @@ export const Card = styled.View`
     border-radius: 8px;
     background-color: ${(props) => props.theme.colors.secondary};
     padding: 16px;
-    justify-content: space-between;
     elevation: 1;
     shadow-opacity: 1;
     shadow-radius: 5px;
