@@ -8,7 +8,7 @@ import {
   TextBlack
 } from './styles'
 
-import { Row, RowColumn, Center } from '../../global/styles'
+import Margin from '../../components/margin';
 
 interface IProps {
   title: string
@@ -41,6 +41,7 @@ export const IconPlusButton = (props:IProps) => {
   return (
     <Transparent onPress={onPress}>
       <IconPrimary name='add-circle' />
+      <Margin left={5} />
       <TextBlack>{title}</TextBlack>
     </Transparent>
   )

@@ -17,6 +17,7 @@ import {
 } from './styles'
 
 import CardInfo from '../../components/cardInfo';
+import Margin from '../../components/margin';
 import { SectionTitle, TextBold, TextRegular } from '../../components/texts'
 import { DefaultButton, PrimaryButton, IconPlusButton } from '../../components/buttons'
 
@@ -73,38 +74,45 @@ export default function Dashboard() {
         </PlansInfo>
 
         <ContainerPadding>
-          <SectionTitle>My Invoice</SectionTitle>
+          <SectionTitle>{translated.myInvoice}</SectionTitle>
           <Card>
 
             <Row>
               <FlexWidth>
                 <RowColumn>
-                  <TextRegular>Detailed Usage</TextRegular>
-                  <TextBold>$38,21</TextBold>
-                  <DefaultButton title='Detailes' onPress={() => {}}/>
+                  <TextRegular>{translated.detailedUsage}</TextRegular>
+                  <Margin top={5} />
+                  <TextBold>{translated.money}38,21</TextBold>
+                  <Margin top={20} />
+                  <DefaultButton title={translated.detailes} onPress={() => {}}/>
                 </RowColumn>
               </FlexWidth>
 
               <FlexWidth>
                 <RowColumn>
-                  <TextRegular>Debt / Loan Former</TextRegular>
-                  <TextBold>$21,14</TextBold>
-                  <PrimaryButton title='Pay' onPress={() => {}}/>
+                  <TextRegular>{translated.debt}</TextRegular>
+                  <Margin top={5} />
+                  <TextBold>{translated.money}21,14</TextBold>
+                  <Margin top={20} />
+                  <PrimaryButton title={translated.pay} onPress={() => {}}/>
                 </RowColumn>
               </FlexWidth>
             </Row>
 
+            <Margin top={20} />
+
             <Row>
               <FlexWidth>
                 <RowColumn>
-                  <TextRegular>Available credit</TextRegular>
-                  <TextBold>$38,21</TextBold>
+                  <TextRegular>{translated.availableCredit}</TextRegular>
+                  <Margin top={5} />
+                  <TextBold>{translated.money}38,21</TextBold>
                 </RowColumn>
               </FlexWidth>
 
               <FlexWidth>
                 <RowColumn>
-                  <IconPlusButton title='Increase the credit limit' onPress={() => {}}/>
+                  <IconPlusButton title={translated.increaseCreditLimit} onPress={() => {}}/>
                 </RowColumn>
               </FlexWidth>
             </Row>
