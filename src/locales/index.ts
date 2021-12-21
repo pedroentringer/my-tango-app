@@ -11,4 +11,4 @@ const translations = {
   default: en
 }
 
-export const translate = (key: string = 'en-US') => new I18nResolver(translations, key).translation
+export const translate = (key: string = 'en') => new I18nResolver(translations, key).translation

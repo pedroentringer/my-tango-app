@@ -3,8 +3,6 @@ import { StyleSheet, View, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MotiView } from 'moti'
 
-
-
 import { translate } from '../../locales'
 
 import { RowColumn } from '../../global/styles'
@@ -21,7 +19,7 @@ import {
 import CardInfo from '../../components/cardInfo';
 
 export default function Dashboard() {
-  const [lang, setLang] = useState('en-US')
+  const [lang, setLang] = useState('fr')
 
   const translated = translate(lang);
 
@@ -46,36 +44,36 @@ export default function Dashboard() {
        
           <CardInfo 
             gradient 
-            icon='wifi-tethering'
-            title='Teste'
-            value='3'
-            button='Charge'
+            icon='attach-money'
+            title={translated.balance}
+            value={`${translated.money}34,80`}
+            button={translated.charge}
           />
 
           <CardInfo  
             icon='wifi-tethering'
-            title='Teste'
-            value='3'
-            button='Charge'
+            title={translated.yourData}
+            value='17.2'
+            valueComplement='GB'
+            button={translated.charge}
           />
 
           <CardInfo  
-            icon='wifi-tethering'
-            title='Teste'
-            value='3'
-            button='Charge'
+            icon='sms'
+            title={translated.texts}
+            value='250'
+            valueComplement={translated.perDay}
+            button={translated.charge}
           />
-          
-          
             
         </PlansInfo>
         
         <View style={{
           flexDirection: 'row'
         }}>
-          <Button title='Ingles' onPress={() => setLang('en-US')} />
-          <Button title='Português' onPress={() => setLang('pt-BR')} />
-          <Button title='Francês' onPress={() => setLang('fr-FR')} />
+          <Button title='Ingles' onPress={() => setLang('en')} />
+          <Button title='Português' onPress={() => setLang('pt')} />
+          <Button title='Francês' onPress={() => setLang('fr')} />
         </View>
       </ScrollView>
     </Container>

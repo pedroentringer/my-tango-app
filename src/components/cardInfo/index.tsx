@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'; 
+import { AntDesign } from '@expo/vector-icons';
 
 import { 
   Card,
@@ -6,14 +6,20 @@ import {
   Icon,
   IconGradient,
   Title,
-  Value
+  Value,
+  ValueComplement,
+  RowStyled,
+  Button
 } from './styles'
+
+import { RowColumn } from '../../global/styles'
 
 interface ICardInfoProps {
     gradient?: boolean;
     icon: any;
     title: string;
     value: string;
+    valueComplement?: string;
     button: string;
 }
 
@@ -26,9 +32,20 @@ const CardInfo = (props:ICardInfoProps) => {
   return (
     <Container>
       <IconSelected name={props.icon}/>
-      <Title gradient={gradient} >{props.title}</Title>
-      <Value gradient={gradient} >{props.value}</Value>
-      <Title gradient={gradient} >{props.button}</Title>
+
+      <RowColumn>
+        <Title gradient={gradient} >{props.title}</Title>
+
+        <RowStyled>
+          <Value gradient={gradient} >{props.value}</Value>
+          {props.valueComplement && <ValueComplement>{props.valueComplement}</ValueComplement>}
+        </RowStyled>
+
+        <Button>
+          <Title gradient={gradient} >{props.button}</Title>
+          <IconSelected name="keyboard-arrow-right" size={12} />
+        </Button>
+      </RowColumn>
     </Container>
   )
 }

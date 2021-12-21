@@ -1,12 +1,16 @@
-import { ThemedStyledFunction } from 'styled-components';
-
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from '@expo/vector-icons';
 
+import {Row} from '../../global/styles'
+
 interface IPropsGradient {
     gradient?: boolean
 }
+
+export const RowStyled = styled(Row)`
+    align-items: flex-end;
+`;
 
 export const Title = styled.Text<IPropsGradient>`
     color: ${(props) => props.gradient ? props.theme.colors.gradient.text : props.theme.colors.gray[900]}
@@ -17,6 +21,20 @@ export const Value = styled.Text<IPropsGradient>`
     font-size: 24px;
     font-weight: bold;
     color: ${(props) => props.gradient ? props.theme.colors.gradient.text : props.theme.colors.gray[900]}
+`;
+
+export const ValueComplement = styled(Value)`
+    font-size: 14px;
+    margin-left: 5px;
+`;
+
+export const Button = styled.TouchableOpacity.attrs((props) => ({
+    activeOpacity: 0.8
+}))`
+    margin-top: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 export const Icon = styled(MaterialIcons).attrs((props) => ({
