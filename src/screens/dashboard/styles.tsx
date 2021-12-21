@@ -1,5 +1,29 @@
 import styled from "styled-components/native";
 
+import { MaterialIcons } from '@expo/vector-icons';
+
+import { Row } from '../../global/styles'
+
+export const ListRow = styled(Row)`
+    padding: 20px 0px;
+    border-bottom-color: ${({ theme }) => theme.colors.background};
+    border-bottom-width: 1px;
+`;
+
+export const Icon = styled(MaterialIcons).attrs((props) => ({
+    size: 24,
+    color: props.theme.colors.gray[500]
+}))``;
+
+export const CircleIcon = styled.View`
+    width: 45px;
+    height: 45px;
+    border-radius: 22.5px;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.colors.background};
+`;
+
 export const Container = styled.View`
     flex: 1;
     background-color: ${({ theme }) => theme.colors.background};
@@ -62,5 +86,3 @@ export const Card = styled.View`
     shadow-color: ${(props) => props.theme.colors.gray[200]};
     shadow-offset: 0px 0px;
 `;
-
-export const Default = styled.View``;

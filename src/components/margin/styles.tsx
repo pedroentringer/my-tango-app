@@ -8,8 +8,8 @@ interface IProps {
 }
 
 export const DynamicMargin = styled.View<IProps>`
-    ${({ top }) => top && `margin-top: ${top}`};
-    ${({ right }) => right && `margin-right: ${right}`};
-    ${({ bottom }) => bottom && `margin-bottom: ${bottom}`};
-    ${({ left }) => left && `margin-left: ${left}`};
+    ${({ top }) => top && `margin-top: ${top}px`};
+    ${({ right }) => right && `margin-right: ${right}px`};
+    ${({ bottom }) => bottom && `margin-bottom: ${bottom}px`};
+    ${({ left }) => left && `margin-left: ${left}px`};
 `;

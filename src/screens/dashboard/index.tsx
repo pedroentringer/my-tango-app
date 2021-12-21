@@ -3,7 +3,7 @@ import { View, Button } from 'react-native';
 
 import { translate } from '../../locales'
 
-import { RowColumn, Row, FlexWidth } from '../../global/styles'
+import { RowColumn, Row, FlexWidth, Center } from '../../global/styles'
 import { 
   Container, 
   ContainerPadding,
@@ -13,13 +13,18 @@ import {
   TitleUserName,
   Profile,
   PlansInfo,
-  Card
+  Card,
+  Icon, 
+  CircleIcon,
+  ListRow
 } from './styles'
 
 import CardInfo from '../../components/cardInfo';
 import Margin from '../../components/margin';
 import { SectionTitle, TextBold, TextRegular } from '../../components/texts'
 import { DefaultButton, PrimaryButton, IconPlusButton } from '../../components/buttons'
+
+import topUpOptions from './mocks/topUpOptions';
 
 export default function Dashboard() {
   const [lang, setLang] = useState('fr')
@@ -116,6 +121,40 @@ export default function Dashboard() {
                 </RowColumn>
               </FlexWidth>
             </Row>
+
+          </Card>
+
+          <Margin top={30} />
+          <SectionTitle>Top Up</SectionTitle>
+
+          <Card>
+
+            {topUpOptions.map((option, index) => {
+
+              return (
+                <ListRow key={`topUpOptions-${index}`}>
+                  <Center>
+                    <CircleIcon>
+                      <Icon name={option.icon}/>
+                    </CircleIcon>
+                  </Center>
+
+                  <Margin right={10} />
+
+                  <FlexWidth>
+                    <RowColumn>
+                        <TextBold>{option.title}</TextBold>
+                        <Margin top={5} />
+                        <TextRegular>{option.description}</TextRegular>
+                    </RowColumn>
+                  </FlexWidth>
+
+                  <Center>
+                    <Icon name='arrow-forward-ios'/>
+                  </Center>
+                </ListRow>
+              )
+            })}
 
           </Card>
         </ContainerPadding>
