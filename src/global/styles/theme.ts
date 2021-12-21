@@ -28,8 +28,8 @@ export const darkTheme = {
     },
     gray: {
       '900': '#ffffff',
-      '500': '#ffffff',
-      '200': '#ffffff',
+      '500': '#282936',
+      '200': '#111',
     }
   },
 }

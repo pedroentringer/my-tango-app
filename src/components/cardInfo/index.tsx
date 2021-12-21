@@ -1,5 +1,3 @@
-import { AntDesign } from '@expo/vector-icons';
-
 import { 
   Card,
   Gradient,

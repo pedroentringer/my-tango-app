@@ -29,7 +29,7 @@ export const ValueComplement = styled(Value)`
 `;
 
 export const Button = styled.TouchableOpacity.attrs((props) => ({
-    activeOpacity: 0.8
+    activeOpacity: 0.7
 }))`
     margin-top: 40px;
     flex-direction: row;
@@ -55,6 +55,11 @@ export const Card = styled.View`
     background-color: ${(props) => props.theme.colors.secondary};
     padding: 16px;
     justify-content: space-between;
+    elevation: 1;
+    shadow-opacity: 1;
+    shadow-radius: 5px;
+    shadow-color: ${(props) => props.theme.colors.gray[200]};
+    shadow-offset: 0px 0px;
 `;
 
 export const Gradient = styled(LinearGradient).attrs(props => ({

@@ -1,22 +1,24 @@
 import { useState } from 'react';
-import { StyleSheet, View, Button } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { MotiView } from 'moti'
+import { View, Button } from 'react-native';
 
 import { translate } from '../../locales'
 
-import { RowColumn } from '../../global/styles'
+import { RowColumn, Row, FlexWidth } from '../../global/styles'
 import { 
   Container, 
+  ContainerPadding,
   ScrollView,
   Header,
   Title,
   TitleUserName,
   Profile,
-  PlansInfo 
+  PlansInfo,
+  Card
 } from './styles'
 
 import CardInfo from '../../components/cardInfo';
+import { SectionTitle, TextBold, TextRegular } from '../../components/texts'
+import { DefaultButton, PrimaryButton, IconPlusButton } from '../../components/buttons'
 
 export default function Dashboard() {
   const [lang, setLang] = useState('fr')
@@ -27,18 +29,20 @@ export default function Dashboard() {
     <Container>
       <ScrollView>
 
-        <Header>
-          <RowColumn>
-            <Title>{translated.title},</Title>
-            <TitleUserName>Pedro!</TitleUserName>
-          </RowColumn>
+        <ContainerPadding>
+          <Header>
+            <RowColumn>
+              <Title>{translated.title},</Title>
+              <TitleUserName>Pedro!</TitleUserName>
+            </RowColumn>
 
-          <Profile
-            source={{
-              uri: 'https://avatars.githubusercontent.com/u/29384810?v=4',
-            }}
-          />
-        </Header>
+            <Profile
+              source={{
+                uri: 'https://avatars.githubusercontent.com/u/29384810?v=4',
+              }}
+            />
+          </Header>
+        </ContainerPadding>
 
         <PlansInfo>
        
@@ -67,6 +71,46 @@ export default function Dashboard() {
           />
             
         </PlansInfo>
+
+        <ContainerPadding>
+          <SectionTitle>My Invoice</SectionTitle>
+          <Card>
+
+            <Row>
+              <FlexWidth>
+                <RowColumn>
+                  <TextRegular>Detailed Usage</TextRegular>
+                  <TextBold>$38,21</TextBold>
+                  <DefaultButton title='Detailes' onPress={() => {}}/>
+                </RowColumn>
+              </FlexWidth>
+
+              <FlexWidth>
+                <RowColumn>
+                  <TextRegular>Debt / Loan Former</TextRegular>
+                  <TextBold>$21,14</TextBold>
+                  <PrimaryButton title='Pay' onPress={() => {}}/>
+                </RowColumn>
+              </FlexWidth>
+            </Row>
+
+            <Row>
+              <FlexWidth>
+                <RowColumn>
+                  <TextRegular>Available credit</TextRegular>
+                  <TextBold>$38,21</TextBold>
+                </RowColumn>
+              </FlexWidth>
+
+              <FlexWidth>
+                <RowColumn>
+                  <IconPlusButton title='Increase the credit limit' onPress={() => {}}/>
+                </RowColumn>
+              </FlexWidth>
+            </Row>
+
+          </Card>
+        </ContainerPadding>
         
         <View style={{
           flexDirection: 'row',
@@ -82,22 +126,3 @@ export default function Dashboard() {
     </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  gradient:{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  shape: {
-    justifyContent: 'center',
-    height: 60,
-    width: 60,
-    borderRadius: 30,
-    backgroundColor: 'red',
-  },
-});

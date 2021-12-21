@@ -12,3 +12,12 @@ export const Row = styled.View`
 export const RowColumn = styled.View`
     flex-direction: column;
 `;
+
+export const FlexWidth = styled.View`
+    flex: 1;
+`;
+
+export const Center = styled.View`
+    justify-content: center;
+    align-items: center;
+`;
