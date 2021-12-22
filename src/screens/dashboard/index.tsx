@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { View, Button } from 'react-native';
+import { useContext } from 'react';
 
 import { translate } from '../../locales'
 
@@ -25,10 +24,13 @@ import BottomMenu from '../../components/bottomMenu';
 import { SectionTitle, TextBold, TextRegular } from '../../components/texts'
 import { DefaultButton, PrimaryButton, IconPrimaryButton } from '../../components/buttons'
 
-export default function Dashboard() {
-  const [lang, setLang] = useState('en')
+import { LanguageContext } from '../../providers/language';
 
-  const translated = translate(lang);
+export default function Dashboard() {
+
+  const { language } = useContext(LanguageContext)
+
+  const translated = translate(language);
 
   return (
     <Container>
@@ -156,17 +158,6 @@ export default function Dashboard() {
 
           </Card>
         </ContainerPadding>
-        
-        <View style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          padding: 10,
-          marginTop: 40
-        }}>
-          <Button title='Ingles' onPress={() => setLang('en')} />
-          <Button title='Português' onPress={() => setLang('pt')} />
-          <Button title='Francês' onPress={() => setLang('fr')} />
-        </View>
       </ScrollView>
       <BottomMenu />
     </Container>
