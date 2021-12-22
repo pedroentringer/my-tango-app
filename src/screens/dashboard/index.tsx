@@ -21,8 +21,9 @@ import {
 
 import CardInfo from '../../components/cardInfo';
 import Margin from '../../components/margin';
+import BottomMenu from '../../components/bottomMenu';
 import { SectionTitle, TextBold, TextRegular } from '../../components/texts'
-import { DefaultButton, PrimaryButton, IconPlusButton } from '../../components/buttons'
+import { DefaultButton, PrimaryButton, IconPrimaryButton } from '../../components/buttons'
 
 export default function Dashboard() {
   const [lang, setLang] = useState('en')
@@ -115,7 +116,7 @@ export default function Dashboard() {
 
               <FlexWidth>
                 <RowColumn>
-                  <IconPlusButton title={translated.increaseCreditLimit} onPress={() => {}}/>
+                  <IconPrimaryButton icon='add-circle' title={translated.increaseCreditLimit} onPress={() => {}}/>
                 </RowColumn>
               </FlexWidth>
             </Row>
@@ -167,6 +168,7 @@ export default function Dashboard() {
           <Button title='Francês' onPress={() => setLang('fr')} />
         </View>
       </ScrollView>
+      <BottomMenu />
     </Container>
   );
 }

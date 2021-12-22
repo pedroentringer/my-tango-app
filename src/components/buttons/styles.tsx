@@ -7,6 +7,11 @@ export const IconPrimary = styled(MaterialIcons).attrs((props) => ({
     color: props.theme.colors.primary
 }))``;
 
+export const Icon = styled(MaterialIcons).attrs((props) => ({
+    size: 24,
+    color: props.theme.colors.gray[500]
+}))``;
+
 export const Text = styled.Text`
     font-size: 14px;
     color: ${({ theme }) => theme.colors.gray[500]};
@@ -30,6 +35,7 @@ export const Default = styled.TouchableOpacity.attrs((props) => ({
     align-items: center;
     border-radius: 20px;
     align-self: baseline;
+    flex-direction: row;
 `;
 
 export const Primary = styled(Default)`

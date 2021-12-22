@@ -4,45 +4,85 @@ import {
   Default,
   Primary,
   IconPrimary,
+  Icon,
   Transparent,
   TextBlack
 } from './styles'
 
 import Margin from '../../components/margin';
 
-interface IProps {
+interface IDefaultProps {
   title: string
+  icon?: string
   onPress?: () => void 
 }
 
-export const DefaultButton = (props:IProps) => {
-  const { title, onPress } = props
+interface IDefaultWithIconProps {
+  title?: string
+  icon: string
+  onPress?: () => void 
+}
+
+export const DefaultButton = (props:IDefaultProps) => {
+  const { title, onPress, icon } = props
 
   return (
     <Default onPress={onPress}>
+      {icon && (
+        <>
+          <Icon name={icon} />
+          <Margin left={5} />
+        </>
+      )}
       <Text>{title}</Text>
     </Default>
   )
 };
 
-export const PrimaryButton = (props:IProps) => {
-  const { title, onPress } = props
+export const PrimaryButton = (props:IDefaultProps) => {
+  const { title, onPress, icon } = props
 
   return (
     <Primary onPress={onPress}>
+      {icon && (
+        <>
+          <IconPrimary name={icon} />
+          <Margin left={5} />
+        </>
+      )}
       <TextPrimary>{title}</TextPrimary>
     </Primary>
   )
 };
 
-export const IconPlusButton = (props:IProps) => {
-  const { title, onPress } = props
+export const IconPrimaryButton = (props:IDefaultWithIconProps) => {
+  const { title, onPress, icon } = props
 
   return (
     <Transparent onPress={onPress}>
-      <IconPrimary name='add-circle' />
-      <Margin left={5} />
-      <TextBlack>{title}</TextBlack>
+      <IconPrimary name={icon} />
+      {title && (
+        <>
+          <Margin left={5} />
+          <TextBlack>{title}</TextBlack>
+        </>
+      )}
+    </Transparent>
+  )
+};
+
+export const IconButton = (props:IDefaultWithIconProps) => {
+  const { title, onPress, icon } = props
+
+  return (
+    <Transparent onPress={onPress}>
+      <Icon name={icon} />
+      {title && (
+        <>
+          <Margin left={5} />
+          <TextBlack>{title}</TextBlack>
+        </>
+      )}
     </Transparent>
   )
 };

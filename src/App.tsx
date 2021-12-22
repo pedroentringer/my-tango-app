@@ -17,7 +17,6 @@ export default function AppIndex() {
             <Container>
                 <SafeAreaView />
                 <Dashboard />
-                <SafeAreaView />
             </Container>
         </ThemeProvider>
     )
