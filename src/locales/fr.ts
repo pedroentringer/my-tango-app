@@ -13,6 +13,7 @@ export default {
   pay: 'Payer',
   availableCredit: 'Crédit disponible',
   increaseCreditLimit: 'Augmenter la limite de crédit',
+  topUp: 'Recharge',
   topUpOptions: [
     {
         icon: 'bolt',

@@ -1,8 +1,8 @@
-import { SafeAreaView } from 'react-native';
+
 import { StatusBar } from 'expo-status-bar';
 
 import { Container } from './global/styles'
-import Dashboard from './screens/dashboard'
+import Routes from './routes'
 
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './global/styles/theme'
@@ -16,8 +16,7 @@ export default function AppIndex() {
         <StyledThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
             <StatusBar style={isDarkTheme ? 'light' : 'dark'} />
             <Container>
-                <SafeAreaView />
-                <Dashboard />
+                <Routes />
             </Container>
         </StyledThemeProvider>
     )

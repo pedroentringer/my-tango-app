@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-
+import { SafeAreaView } from 'react-native';
 import { translate } from '../../locales'
 
 import { RowColumn, Row, FlexWidth, Center } from '../../global/styles'
@@ -34,6 +34,7 @@ export default function Dashboard() {
 
   return (
     <Container>
+      <SafeAreaView />
       <ScrollView>
 
         <ContainerPadding>
@@ -79,10 +80,23 @@ export default function Dashboard() {
             
         </PlansInfo>
 
-        <ContainerPadding>
+        <ContainerPadding 
+          from={{
+            opacity: 0,
+            translateY: 40,
+          }}
+          animate={{
+            opacity: 1,
+            translateY: 0,
+          }}
+          transition={{
+            type: 'timing',
+            duration: 1000,
+            delay: 500
+          }}
+        >
           <SectionTitle>{translated.myInvoice}</SectionTitle>
           <Card>
-
             <Row>
               <FlexWidth>
                 <RowColumn>
@@ -126,7 +140,7 @@ export default function Dashboard() {
           </Card>
 
           <Margin top={30} />
-          <SectionTitle>Top Up</SectionTitle>
+          <SectionTitle>{translated.topUp}</SectionTitle>
 
           <Card>
 
@@ -159,7 +173,23 @@ export default function Dashboard() {
           </Card>
         </ContainerPadding>
       </ScrollView>
-      <BottomMenu />
+
+      <BottomMenu 
+        from={{
+          opacity: 0,
+          translateY: 40,
+        }}
+        animate={{
+          opacity: 1,
+          translateY: 0,
+        }}
+        transition={{
+          type: 'timing',
+          duration: 1000,
+          delay: 700
+        }}
+      />
+
     </Container>
   );
 }

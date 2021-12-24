@@ -19,8 +19,8 @@ export const lightTheme = {
 export const darkTheme = {
   colors: {
     primary: '#EB3349',
-    secondary: '#282936',
-    background: '#111',
+    secondary: '#202024',
+    background: '#121214',
     gradient: {
       start: '#EB3349',
       end: '#F45C43',
@@ -29,7 +29,7 @@ export const darkTheme = {
     gray: {
       '900': '#ffffff',
       '500': '#bdbdbd',
-      '200': '#111',
+      '200': '#121214',
     }
   },
 }

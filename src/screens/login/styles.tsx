@@ -1,10 +1,21 @@
 import styled from "styled-components/native";
-
+import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { Row } from '../../global/styles'
 
 import { MotiView, MotiScrollView } from 'moti'
+
+export const Container = styled(LinearGradient).attrs(props => ({
+    colors: [
+        props.theme.colors.gradient.start, 
+        props.theme.colors.gradient.end
+    ]
+}))`
+    flex: 1;
+    justify-content: space-between;
+    padding: 24px;
+`;
 
 export const ListRow = styled(Row)`
     padding: 20px 0px;
@@ -24,15 +35,6 @@ export const CircleIcon = styled.View`
     justify-content: center;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.background};
-`;
-
-export const Container = styled.View`
-    flex: 1;
-    background-color: ${({ theme }) => theme.colors.background};
-`;
-
-export const ContainerPadding = styled(MotiView)`
-    padding: 24px;
 `;
 
 export const ScrollView = styled.ScrollView`
