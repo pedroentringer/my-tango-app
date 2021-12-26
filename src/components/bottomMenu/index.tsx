@@ -11,7 +11,7 @@ import { PrimaryButton, IconButton, DefaultButton } from '../../components/butto
 import { ThemeContext } from '../../providers/theme';
 import { LanguageContext } from '../../providers/language';
 
-import { MotiView, useAnimationState } from 'moti'
+import { MotiView, useAnimationState, AnimatePresence } from 'moti'
 
 const BottomMenu = (props:any) => {
   const { isDarkTheme, handleTheme } = useContext(ThemeContext)
@@ -54,9 +54,11 @@ const BottomMenu = (props:any) => {
   }
   return (
     <>
-      {
-        renderSubMenuLanguage()
-      }
+      <AnimatePresence>
+        {
+          renderSubMenuLanguage()
+        }
+      </AnimatePresence>
       <MotiView {...props}>
         <Container>
           <PrimaryButton icon='bar-chart' title='Dashboard'/>

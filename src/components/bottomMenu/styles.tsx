@@ -23,7 +23,7 @@ export const ContainerSubMenu = styled(MotiView)`
     width: 100%;
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
-    background-color: ${(props) => props.theme.colors.gray[500]};
+    background-color: ${(props) => props.theme.colors.primary};
     padding: 16px 24px 40px 24px;
     elevation: 1;
     shadow-opacity: 1;

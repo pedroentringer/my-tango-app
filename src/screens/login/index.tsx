@@ -3,26 +3,17 @@ import { StatusBar } from 'expo-status-bar';
 
 import { translate } from '../../locales'
 
-import { RowColumn, Row, FlexWidth, Center } from '../../global/styles'
-import { 
-  Container, 
-  ScrollView,
-  Header,
-  Title,
-  TitleUserName,
-  Profile,
-  PlansInfo,
-  Card,
-  Icon, 
-  CircleIcon,
-  ListRow
-} from './styles'
+import { useNavigation } from '@react-navigation/native'
 
-import CardInfo from '../../components/cardInfo';
-import Margin from '../../components/margin';
-import BottomMenu from '../../components/bottomMenu';
-import { SectionTitle, TextBold, TextRegular } from '../../components/texts'
-import { DefaultButton, PrimaryButton, IconPrimaryButton } from '../../components/buttons'
+import { 
+  Container,
+  Logo,
+  PreName,
+  Name,
+  Buttons,
+  LoginButton,
+  RegisterButton,
+} from './styles'
 
 import { LanguageContext } from '../../providers/language';
 
@@ -32,10 +23,32 @@ export default function Login() {
 
   const translated = translate(language);
 
+  const navigation = useNavigation();
+
   return (
     <Container>
       <StatusBar style='light' />
 
+
+      <Logo>
+        <PreName>My</PreName>
+        <Name>Tango</Name>
+      </Logo>
+
+      <Buttons>
+        <LoginButton 
+          title={translated.login} 
+          onPress={() => {
+            navigation.navigate('Dashboard' as never)
+          }}
+        />
+        <RegisterButton 
+          title={translated.register} 
+          onPress={() => {
+            navigation.navigate('Dashboard' as never)
+          }}
+        />
+      </Buttons>
     </Container>
   );
 }

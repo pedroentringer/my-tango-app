@@ -1,4 +1,6 @@
 export default {
+  login: 'Entrar',
+  register: 'Registrar',
   title: 'Olá',
   money: 'R$',
   perDay: 'por dia',

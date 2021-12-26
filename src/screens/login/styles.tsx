@@ -1,10 +1,21 @@
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
-import { MaterialIcons } from '@expo/vector-icons';
 
-import { Row } from '../../global/styles'
+import { DefaultButton } from '../../components/buttons'
 
-import { MotiView, MotiScrollView } from 'moti'
+import { MotiView } from 'moti'
+
+export const PreName = styled.Text`
+    font-size: 20px;
+    font-family: 'Belgacon-UltraLight';
+    color: #ffffff;
+`;
+
+export const Name = styled.Text`
+    font-size: 40px;
+    font-family: 'Belgacon-Bold';
+    color: #ffffff;
+`;
 
 export const Container = styled(LinearGradient).attrs(props => ({
     colors: [
@@ -13,35 +24,12 @@ export const Container = styled(LinearGradient).attrs(props => ({
     ]
 }))`
     flex: 1;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding: 24px;
 `;
 
-export const ListRow = styled(Row)`
-    padding: 20px 0px;
-    border-bottom-color: ${({ theme }) => theme.colors.background};
-    border-bottom-width: 1px;
-`;
-
-export const Icon = styled(MaterialIcons).attrs((props) => ({
-    size: 24,
-    color: props.theme.colors.gray[500]
-}))``;
-
-export const CircleIcon = styled.View`
-    width: 45px;
-    height: 45px;
-    border-radius: 22.5px;
-    justify-content: center;
-    align-items: center;
-    background-color: ${({ theme }) => theme.colors.background};
-`;
-
-export const ScrollView = styled.ScrollView`
-    background-color: ${({ theme }) => theme.colors.background};
-`;
-
-export const Header = styled(MotiView).attrs({
+export const Logo = styled(MotiView).attrs({
     from:{
         opacity: 0,
         translateY: 40,
@@ -53,42 +41,19 @@ export const Header = styled(MotiView).attrs({
     transition: {
         type: 'timing',
         duration: 1000,
+        delay: 100
     }
 })`
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 24px;
 `;
 
-export const Title = styled.Text`
-    font-size: 24px;
-    color: ${({ theme }) => theme.colors.gray[900]};
-`;
-
-export const TitleUserName = styled(Title)`
-    font-weight: bold;
-`;
-
-export const Profile = styled.Image`
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-`;
-
-export const PlansInfo = styled(MotiScrollView).attrs(props => ({
-    horizontal: true,
-    alwaysBounceHorizontal: true,
-    bounces: true,
-    decelerationRate: "fast",
-    showsHorizontalScrollIndicator: false,
-    scrollEventThrottle: 200,
-    pagingEnabled: true,
-    contentContainerStyle: {
-        paddingHorizontal: 24
-    },
+export const Buttons = styled(MotiView).attrs({
     from:{
         opacity: 0,
-        translateY: 20,
+        translateY: 40,
     },
     animate: {
         opacity: 1,
@@ -96,22 +61,23 @@ export const PlansInfo = styled(MotiScrollView).attrs(props => ({
     },
     transition: {
         type: 'timing',
-        duration: 500,
-        delay: 200
+        duration: 1000,
+        delay: 800
     }
-  }))`
-  padding-top: 10px;
-  padding-bottom: 10px;
+})`
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 `;
 
-export const Card = styled.View`
+export const LoginButton = styled(DefaultButton)`
     width: 100%;
-    border-radius: 8px;
-    background-color: ${(props) => props.theme.colors.secondary};
-    padding: 16px;
-    elevation: 1;
-    shadow-opacity: 1;
-    shadow-radius: 5px;
-    shadow-color: ${(props) => props.theme.colors.gray[200]};
-    shadow-offset: 0px 0px;
+    margin-bottom: 16px;
+    padding: 12px 0px;
 `;
+
+export const RegisterButton = styled(DefaultButton)`
+    width: 100%;
+    padding: 12px 0px;
+`;
+
