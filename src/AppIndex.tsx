@@ -14,7 +14,6 @@ export default function AppIndex() {
     
     return (
         <StyledThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-            <StatusBar style={isDarkTheme ? 'light' : 'dark'} />
             <Container>
                 <Routes />
             </Container>

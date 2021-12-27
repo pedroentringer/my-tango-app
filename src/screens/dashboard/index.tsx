@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { SafeAreaView } from 'react-native';
-import { translate } from '../../locales'
+import { StatusBar } from 'expo-status-bar';
 
+import { translate } from '../../locales'
 import { RowColumn, Row, FlexWidth, Center } from '../../global/styles'
 import { 
   Container, 
@@ -25,15 +26,18 @@ import { SectionTitle, TextBold, TextRegular } from '../../components/texts'
 import { DefaultButton, PrimaryButton, IconPrimaryButton } from '../../components/buttons'
 
 import { LanguageContext } from '../../providers/language';
+import { ThemeContext } from '../../providers/theme';
 
 export default function Dashboard() {
 
   const { language } = useContext(LanguageContext)
+  const {isDarkTheme} = useContext(ThemeContext)
 
   const translated = translate(language);
 
   return (
     <Container>
+      <StatusBar style={isDarkTheme ? 'light' : 'dark'} />
       <SafeAreaView />
       <ScrollView>
 
