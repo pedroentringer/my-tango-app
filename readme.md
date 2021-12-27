@@ -1,6 +1,6 @@
 # MyTango App Redesign
 
-Layout created by Farshid Darvishi. [Behance](https://www.behance.net/gallery/81946921/Redesign-Vodafone-app)
+Layout created by Farshid Darvishi for Vodafone App. [Behance](https://www.behance.net/gallery/81946921/Redesign-Vodafone-app)
 
 ## Features
 
