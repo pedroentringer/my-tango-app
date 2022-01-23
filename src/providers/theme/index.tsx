@@ -8,13 +8,13 @@ export interface ContextProvider {
 
 export const ThemeContext = createContext({} as ContextProvider)
 
-interface AuthProviderProps {
+interface ProviderProps {
   children?: ReactNode
 }
 
 const DEFAULT_VALUE = false
 
-const ThemeProvider = ({ children }: AuthProviderProps) => {
+const ThemeProvider = ({ children }: ProviderProps) => {
   const [isDarkTheme, setIsDarkTheme] = useState(DEFAULT_VALUE)
 
   const handleTheme = () => {
